@@ -1,0 +1,15 @@
+#container {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#container > div {
+    aspect-ratio: 1/1;
+    background-color: grey;
+    flex-basis: 25%;
+}
