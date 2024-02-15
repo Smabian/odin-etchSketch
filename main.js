@@ -31,9 +31,14 @@ function calculateGridItemSize (gridSize) {
     return itemSize;
 }
 
+function clearGrid () {
+    document.getElementById("container").innerHTML="";
+}
+
 let sizeButton = document.getElementById("sizeButton");
 
 sizeButton.addEventListener("click", function (){
+    clearGrid();
     let gridSize = prompt("Enter the level of Detail you want (0 = low Detail | 100 = High Detail):");
     if (gridSize > 100) {
         alert("Level of Detail to High, please choose lower Detail Level");
