@@ -3,7 +3,7 @@ function createGrid (gridsize) {
 
     let itemSize = calculateGridItemSize(gridsize);
     
-    for(let i=0;i<gridsize;i++){
+    for(let i=0;i<(gridsize*gridsize);i++){
         let gridItem = document.createElement("div");
         gridItem.style.width = itemSize + "px";
         gridItem.style.height = itemSize + "px";
@@ -27,15 +27,17 @@ function hoverEffect (item, color) {
 }
 
 function calculateGridItemSize (gridSize) {
-    let itemPerRow = Math.sqrt(gridSize);
-    console.log(itemPerRow);
-    let itemSize = 960 / itemPerRow;
+    let itemSize = 960 / gridSize;
     return itemSize;
 }
 
 let sizeButton = document.getElementById("sizeButton");
 
 sizeButton.addEventListener("click", function (){
-    let gridSize = prompt("Enter the number of Grids you want to use");
-    createGrid(gridSize);
+    let gridSize = prompt("Enter the level of Detail you want (0 = low Detail | 100 = High Detail):");
+    if (gridSize > 100) {
+        alert("Level of Detail to High, please choose lower Detail Level");
+    } else {
+        createGrid(gridSize);
+    }
 });
