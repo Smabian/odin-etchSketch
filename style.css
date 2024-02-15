@@ -12,4 +12,6 @@
     aspect-ratio: 1/1;
     background-color: grey;
     flex-basis: 25%;
+    width: auto;
+    height: auto;
 }
