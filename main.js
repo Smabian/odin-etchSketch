@@ -23,7 +23,7 @@ function createGrid (gridsize) {
 }
 
 function hoverEffect (item, color) {
-    item.style.backgroundColor = color;
+    item.style.backgroundColor = getRandomColor();
 }
 
 function calculateGridItemSize (gridSize) {
@@ -33,6 +33,11 @@ function calculateGridItemSize (gridSize) {
 
 function clearGrid () {
     document.getElementById("container").innerHTML="";
+}
+
+function getRandomColor () {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
 
 let sizeButton = document.getElementById("sizeButton");
