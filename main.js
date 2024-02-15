@@ -14,9 +14,11 @@ function createGrid (gridsize) {
     let gridSelection = document.querySelectorAll("#container div");    
     
     counter = gridSelection.length;
+
+    
     for (let i=0;i<counter;i++) {
     gridSelection[i].addEventListener("mouseover", function() {
-            hoverEffect(gridSelection[i],'blue');
+        hoverEffect(gridSelection[i],'blue');
     });
 }
 
@@ -38,6 +40,12 @@ function clearGrid () {
 function getRandomColor () {
     var o = Math.round, r = Math.random, s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+function getDarkness (iteration) {
+    let darknessLevel = 0.1 * iteration;  
+    console.log(darknessLevel);
+    return "," + darknessLevel + ')';
 }
 
 let sizeButton = document.getElementById("sizeButton");
